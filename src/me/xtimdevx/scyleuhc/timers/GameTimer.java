@@ -47,7 +47,7 @@ public class GameTimer {
 				online.sendMessage(Messages.PREFIX + "The game is now §c0 §7minutes in.");
 			}
         	Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "timer cancel");
-        	Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "timer " + Main.pvp*60 + " &8[§cTIMER§8]: &fTime until pvp: §c");
+        	Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "timer " + Main.pvp*60 + " &8[§cTIMER§8]: &fTime until pvp:§c");
 		}
 	}, 0L);
 	Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, new Runnable() {
