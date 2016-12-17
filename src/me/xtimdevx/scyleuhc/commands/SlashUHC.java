@@ -108,6 +108,8 @@ public class SlashUHC implements CommandExecutor{
 						Bukkit.getWorld("UHC").setTime(0);
 						p.performCommand("wl clear");
 						p.performCommand("wl all");
+						p.performCommand("scoreboard objectives remove kills");
+						ScoreBoard.getInstance().setup();
 						Bukkit.getServer().setWhitelist(true);
 						p.sendMessage(Messages.PREFIX + "Next state: §cscattering, §7/uhc nextstate.");
 						return true;

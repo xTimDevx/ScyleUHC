@@ -30,6 +30,7 @@ public class SlashConfig implements CommandExecutor{
 				p.sendMessage(Messages.ERROR + "/config rates flint <int>");
 				p.sendMessage(Messages.ERROR + "/config rates shears");
 				p.sendMessage(Messages.ERROR + "/config timer finalheal <minutes>");
+				p.sendMessage(Messages.ERROR + "/config timer pvp <minutes>");
 			}
 			
 			if(args.length == 1) {
@@ -48,6 +49,7 @@ public class SlashConfig implements CommandExecutor{
 				}
 				if(args[0].equalsIgnoreCase("timer")) {
 					p.sendMessage(Messages.ERROR + "/config timer finalheal <minutes>");
+					p.sendMessage(Messages.ERROR + "/config timer pvp <minutes>");
 				}
 			}
 			if(args.length == 2) {
