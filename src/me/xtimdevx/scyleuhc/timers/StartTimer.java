@@ -95,28 +95,28 @@ public class StartTimer {
 					online.sendMessage(Messages.PREFIX + "The game is starting in §c20 §7seconds.");
 				}
 			}
-		}, 900L);
+		}, 800L);
 		Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, new Runnable() {
 			public void run() {
 				for(Player online : Bukkit.getOnlinePlayers()) {
 					online.sendMessage(Messages.PREFIX + "The game is starting in §c10 §7seconds.");
 				}
 			}
-		}, 1100L);
+		}, 1000L);
 		Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, new Runnable() {
 			public void run() {
 				for(Player online : Bukkit.getOnlinePlayers()) {
 					online.sendMessage(Messages.PREFIX + "The game is starting in §c5 §7seconds.");
 				}
 			}
-		}, 1200L);
+		}, 1100L);
 		Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, new Runnable() {
 			public void run() {
 				for(Player online : Bukkit.getOnlinePlayers()) {
 					online.sendMessage(Messages.PREFIX + "The game is starting in §c4 §7seconds.");
 				}
 			}
-		}, 1220L);
+		}, 1120L);
 		Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, new Runnable() {
 			@SuppressWarnings("deprecation")
 			public void run() {
@@ -125,7 +125,7 @@ public class StartTimer {
 					online.sendTitle("§8[§c3§8]:", "");
 				}
 			}
-		}, 1240L);
+		}, 1140L);
 		Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, new Runnable() {
 			@SuppressWarnings("deprecation")
 			public void run() {
@@ -134,7 +134,7 @@ public class StartTimer {
 					online.sendTitle("§8[§c2§8]:", "");
 				}
 			}
-		}, 1260L);
+		}, 1160L);
 		Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, new Runnable() {
 			@SuppressWarnings("deprecation")
 			public void run() {
@@ -143,12 +143,12 @@ public class StartTimer {
 					online.sendTitle("§8[§c1§8]:", "");
 				}
 			}
-		}, 1280L);
+		}, 1180L);
 		Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, new Runnable() {
 			public void run() {
 				GameTimer.runTimer();
 			}
-		}, 1300L);
+		}, 1200L);
 	}
 
 }
