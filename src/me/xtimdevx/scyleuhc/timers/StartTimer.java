@@ -48,12 +48,16 @@ public class StartTimer {
 				list.append(Main.scenarios.toString());
 				i++;
 				for(Player online : Bukkit.getOnlinePlayers()) {
-					online.sendMessage(Messages.PREFIX + "Enabled scenario's: §8(§c" + Main.scenarios.size() + "§8) §7" + list.toString());
+					online.sendMessage(Messages.PREFIX + "Enabled scenario's: §8(§c" + Main.scenarios.size() + "§8) §7" + list.toString().replace("{", "").replace("}", "").replace("=null", ""));
 				}
 				
-				GameTimer.runTimer();
 			}
 		}, 300L);
+		Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, new Runnable() {
+			public void run() {
+				GameTimer.runTimer();
+			}
+		}, 400L);
 	}
 
 }
