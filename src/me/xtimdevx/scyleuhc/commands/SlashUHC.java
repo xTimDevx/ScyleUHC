@@ -6,7 +6,7 @@ import java.util.Map;
 
 import me.xtimdevx.scyleuhc.Settings;
 import me.xtimdevx.scyleuhc.State;
-import me.xtimdevx.scyleuhc.timers.GameTimer;
+import me.xtimdevx.scyleuhc.timers.StartTimer;
 import me.xtimdevx.scyleuhc.utils.Messages;
 import me.xtimdevx.scyleuhc.utils.ScoreBoard;
 
@@ -128,7 +128,7 @@ public class SlashUHC implements CommandExecutor{
 						return true;
 					}
 					if(State.isState(State.scattering)) {
-						GameTimer.runTimer();
+						StartTimer.runTimer(p);
 						return true;
 					}
 				}
