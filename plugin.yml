@@ -24,4 +24,7 @@ commands:
    scenario:
       usage: /<command>
       aliases: [scen]
+   teleport:
+      usage: /<command>
+      aliases: [tp]
    

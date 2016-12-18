@@ -27,6 +27,9 @@ public class GameTimer {
 				online.sendMessage(Messages.PREFIX.replace("UHC", "HOST") + Settings.getData().get("game.host"));
 				online.sendMessage(Messages.PREFIX.replace("UHC", "TIMER") + "Final heal: §c" + Main.finalheal + "m");
 				online.sendMessage(Messages.PREFIX.replace("UHC", "TIMER") + "PvP: §c" + Main.pvp + "m");
+				online.sendMessage(Messages.PREFIX.replace("UHC", "TIMER") + "Shrink 1: §c" + Main.border1 + "m");
+				online.sendMessage(Messages.PREFIX.replace("UHC", "TIMER") + "Shrink 2: §c" + Main.border2 + "m");
+				online.sendMessage(Messages.PREFIX.replace("UHC", "TIMER") + "Shrink 3: §c" + Main.border3 + "m");
 				online.sendMessage("§8§m]------------------------[§r");
 			}
 			Game.removeEffects();
@@ -47,7 +50,7 @@ public class GameTimer {
 				online.sendMessage(Messages.PREFIX + "The game is now §c0 §7minutes in.");
 			}
         	Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "timer cancel");
-        	Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "timer " + Main.pvp*60 + " &8[§cTIMER§8]: &fTime until pvp:§c");
+        	Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "timer " + Main.finalheal*60 + " &8[§cTIMER§8]: &fTime until final heal:§c");
 		}
 	}, 0L);
 	Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, new Runnable() {
@@ -56,6 +59,8 @@ public class GameTimer {
 				online.sendMessage(Messages.PREFIX + "Everyone has been §chealed§7, no more heals will be given.");
 				online.setHealth(20);
 			}
+        	Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "timer cancel");
+        	Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "timer " + (Main.pvp*60 - Main.finalheal*60) + " &8[§cTIMER§8]: &fTime until pvp:§c");
 		}
 	}, Main.finalheal*20*60L);
 	

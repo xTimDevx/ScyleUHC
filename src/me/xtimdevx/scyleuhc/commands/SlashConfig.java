@@ -94,6 +94,27 @@ public class SlashConfig implements CommandExecutor{
 				}
 			}
 			if(args.length == 3) {
+				if(args[0].equalsIgnoreCase("teamsize") && args[1].equalsIgnoreCase("mode") && args[2].equalsIgnoreCase("team")) {
+					for(Player online : Bukkit.getOnlinePlayers()) {
+						online.sendMessage(Messages.PREFIX.replace("UHC", "CONFIG") + "The team mode is now §cteam§7.");
+					}
+					Settings.getData().set("teamsize.teammode", "team");
+					Settings.getInstance().saveData();
+				}
+				if(args[0].equalsIgnoreCase("teamsize") && args[1].equalsIgnoreCase("mode") && args[2].equalsIgnoreCase("random")) {
+					for(Player online : Bukkit.getOnlinePlayers()) {
+						online.sendMessage(Messages.PREFIX.replace("UHC", "CONFIG") + "The team mode is now §crandom§7.");
+					}
+					Settings.getData().set("teamsize.teammode", "random");
+					Settings.getInstance().saveData();
+				}
+				if(args[0].equalsIgnoreCase("teamsize") && args[1].equalsIgnoreCase("mode") && args[2].equalsIgnoreCase("ffa")) {
+					for(Player online : Bukkit.getOnlinePlayers()) {
+						online.sendMessage(Messages.PREFIX.replace("UHC", "CONFIG") + "The team mode is now §cffa§7.");
+					}
+					Settings.getData().set("teamsize.teammode", "ffa");
+					Settings.getInstance().saveData();
+				}
 				if(args[0].equalsIgnoreCase("teamsize") && args[1].equalsIgnoreCase("limit")) {
 					int i;
 					
@@ -165,7 +186,52 @@ public class SlashConfig implements CommandExecutor{
 						i = Integer.parseInt(args[3]);
 					} catch(Exception e) {
 						p.sendMessage(Messages.ERROR + "This is not a valid number.");
+						p.sendMessage(Messages.ERROR + "Correct usage: /config timer border 1 <minutes>");
+						return true;
 					}
+					
+					Main.border1 = i;
+					for(Player online : Bukkit.getOnlinePlayers()) {
+						online.sendMessage(Messages.PREFIX.replace("UHC", "CONFIG") + "Set the §ctime §7for §cbordershrink 1 §7at §c" + i + " §7minutes.");
+					}
+					Settings.getData().set("timer.border.1", i);
+					Settings.getInstance().saveData();
+				}
+				if(args[0].equalsIgnoreCase("timer") && args[1].equalsIgnoreCase("border") && args[2].equalsIgnoreCase("2")) {
+					int i;
+					
+					try {
+						i = Integer.parseInt(args[3]);
+					} catch(Exception e) {
+						p.sendMessage(Messages.ERROR + "This is not a valid number.");
+						p.sendMessage(Messages.ERROR + "Correct usage: /config timer border 2 <minutes>");
+						return true;
+					}
+					
+					Main.border2 = i;
+					for(Player online : Bukkit.getOnlinePlayers()) {
+						online.sendMessage(Messages.PREFIX.replace("UHC", "CONFIG") + "Set the §ctime §7for §cbordershrink 2 §7at §c" + i + " §7minutes.");
+					}
+					Settings.getData().set("timer.border.2", i);
+					Settings.getInstance().saveData();
+				}
+				if(args[0].equalsIgnoreCase("timer") && args[1].equalsIgnoreCase("border") && args[2].equalsIgnoreCase("3")) {
+					int i;
+					
+					try {
+						i = Integer.parseInt(args[3]);
+					} catch(Exception e) {
+						p.sendMessage(Messages.ERROR + "This is not a valid number.");
+						p.sendMessage(Messages.ERROR + "Correct usage: /config timer border 3 <minutes>");
+						return true;
+					}
+					
+					Main.border3 = i;
+					for(Player online : Bukkit.getOnlinePlayers()) {
+						online.sendMessage(Messages.PREFIX.replace("UHC", "CONFIG") + "Set the §ctime §7for §cbordershrink 3 §7at §c" + i + " §7minutes.");
+					}
+					Settings.getData().set("timer.border.3", i);
+					Settings.getInstance().saveData();
 				}
 			}
 		} 
