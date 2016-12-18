@@ -31,6 +31,7 @@ public class SlashConfig implements CommandExecutor{
 				p.sendMessage(Messages.ERROR + "/config rates shears");
 				p.sendMessage(Messages.ERROR + "/config timer finalheal <minutes>");
 				p.sendMessage(Messages.ERROR + "/config timer pvp <minutes>");
+				p.sendMessage(Messages.ERROR + "/config timer border <shrinknumber> <minutes>");
 			}
 			
 			if(args.length == 1) {
@@ -50,6 +51,7 @@ public class SlashConfig implements CommandExecutor{
 				if(args[0].equalsIgnoreCase("timer")) {
 					p.sendMessage(Messages.ERROR + "/config timer finalheal <minutes>");
 					p.sendMessage(Messages.ERROR + "/config timer pvp <minutes>");
+					p.sendMessage(Messages.ERROR + "/config timer border <shrinknumber> <minutes>");
 				}
 			}
 			if(args.length == 2) {
@@ -145,8 +147,28 @@ public class SlashConfig implements CommandExecutor{
 					Settings.getData().set("timer.pvp", i);
 					Settings.getInstance().saveData();
 				}
+				if(args[0].equalsIgnoreCase("timer") && args[1].equalsIgnoreCase("border") && args[2].equalsIgnoreCase("1")) {
+					p.sendMessage(Messages.ERROR + "/config timer border 1 <minutes>");
+				}
+				if(args[0].equalsIgnoreCase("timer") && args[1].equalsIgnoreCase("border") && args[2].equalsIgnoreCase("2")) {
+					p.sendMessage(Messages.ERROR + "/config timer border 2 <minutes>");
+				}
+				if(args[0].equalsIgnoreCase("timer") && args[1].equalsIgnoreCase("border") && args[2].equalsIgnoreCase("3")) {
+					p.sendMessage(Messages.ERROR + "/config timer border 3 <minutes>");
+				}
 			}
-		}
+			if(args.length == 4) {
+				if(args[0].equalsIgnoreCase("timer") && args[1].equalsIgnoreCase("border") && args[2].equalsIgnoreCase("1")) {
+					int i;
+					
+					try {
+						i = Integer.parseInt(args[3]);
+					} catch(Exception e) {
+						p.sendMessage(Messages.ERROR + "This is not a valid number.");
+					}
+				}
+			}
+		} 
 		return true;
 	}
 
