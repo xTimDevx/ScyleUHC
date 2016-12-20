@@ -4,7 +4,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.bukkit.Bukkit;
+import org.bukkit.plugin.Plugin;
+import org.bukkit.plugin.java.JavaPlugin;
+
 import me.xtimdevx.scyleuhc.commands.SlashConfig;
+import me.xtimdevx.scyleuhc.commands.SlashHealth;
 import me.xtimdevx.scyleuhc.commands.SlashList;
 import me.xtimdevx.scyleuhc.commands.SlashScatter;
 import me.xtimdevx.scyleuhc.commands.SlashScen;
@@ -19,10 +24,6 @@ import me.xtimdevx.scyleuhc.events.ServerListPingEvents;
 import me.xtimdevx.scyleuhc.scenarios.Timebomb;
 import me.xtimdevx.scyleuhc.utils.ScoreBoard;
 import me.xtimdevx.scyleuhc.utils.Teams;
-
-import org.bukkit.Bukkit;
-import org.bukkit.plugin.Plugin;
-import org.bukkit.plugin.java.JavaPlugin;
 
 public class Main extends JavaPlugin{
 
@@ -71,6 +72,7 @@ public class Main extends JavaPlugin{
 		getCommand("list").setExecutor(new SlashList());
 		getCommand("scenario").setExecutor(new SlashScen());
 		getCommand("teleport").setExecutor(new SlashTeleport());
+		getCommand("health").setExecutor(new SlashHealth());
 	}
 	
 	public void registerScenario() {

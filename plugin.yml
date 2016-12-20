@@ -27,4 +27,6 @@ commands:
    teleport:
       usage: /<command>
       aliases: [tp]
-   
+   health:
+      usage: /<command>
+      aliases: [h]
