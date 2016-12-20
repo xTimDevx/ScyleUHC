@@ -1,0 +1,32 @@
+name: ScyleUHC
+version: 4.0
+author: xTimDevx & GirlJitske
+main: me.xtimdevx.scyleuhc.Main
+
+commands:
+   uhc:
+      usage: /<command>
+   scatter:
+      usage: /<command>
+   whitelist:
+      usage: /<command>
+      aliases: [wl]
+   config:
+      usage: /<command>
+   team:
+      usage: /<command>
+   setstate:
+      usage: /<command>
+   spawn:
+      usage: /<command>
+   list:
+      usage: /<command>
+   scenario:
+      usage: /<command>
+      aliases: [scen]
+   teleport:
+      usage: /<command>
+      aliases: [tp]
+   health:
+      usage: /<command>
+      aliases: [h]
