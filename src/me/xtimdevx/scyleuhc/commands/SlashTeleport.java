@@ -39,17 +39,19 @@ public class SlashTeleport implements CommandExecutor{
 				if(args[0].equalsIgnoreCase("map")) {
 					p.sendMessage(Messages.PREFIX.replace("UHC", "TELEPORT") + "You teleported to the uhc §cmap§7.");
 					p.teleport(new Location(Bukkit.getWorld("UHC"), 0, 80, 0));
-					return true;
 				}
 				if(args[0].equalsIgnoreCase("random")) {
 					Random r = new Random();
-					ArrayList<Player> players = new ArrayList<Player>();
-					for(Player online : Bukkit.getOnlinePlayers()) {
-						if(online == p) {
-						}else players.add(online); {
-							int index = r.nextInt(players.size());
-							Player loc = (Player) players.get(index);
-							p.teleport(loc);
+			          ArrayList<Player> players = new ArrayList<Player>();
+			          for(Player online : Bukkit.getServer().getOnlinePlayers()) {
+			          if(online == p) {
+			          }
+			          else
+			          players.add(online);
+			          }
+			          int index = r.nextInt(players.size());
+			          Player loc = (Player) players.get(index);
+			          p.teleport(loc);
 							p.sendMessage(Messages.PREFIX.replace("UHC", "TELEPORT") + "Teleporting to §c" + loc.getPlayer().getName() + "§7.");
 						    if (loc.getPlayer().getScoreboard().getEntryTeam(loc.getPlayer().getName()) != null) { 
 						    	StringBuilder list = new StringBuilder(""); 
@@ -82,8 +84,6 @@ public class SlashTeleport implements CommandExecutor{
 						}
 						
 					}
-				}
-			}
 		}
 		return true;
 	}
